@@ -1,13 +1,51 @@
-/* Base styles */
+/* Theme Variables */
 :root {
-    --classification-red: #ff4136;
-    --soap-blue: #4CA1AF;
-    --water-blue: #2C3E50;
-    --chrome-gray: #E8E8E8;
-    --foam-white: #FFFFFF;
-    --success-green: #4CAF50;
-    --warning-yellow: #FFC107;
-    --error-red: #DC3545;
+    /* Colors */
+    --primary: #4CA1AF;
+    --primary-dark: #2C3E50;
+    --primary-light: #7fd1df;
+    --secondary: #6c757d;
+    --background: #1a1a1a;
+    --surface: #2c2c2c;
+    --text: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    
+    /* Status Colors */
+    --success: #4CAF50;
+    --warning: #FFC107;
+    --error: #DC3545;
+    --info: #4CA1AF;
+    
+    /* UI Colors */
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 0, 0, 0.2);
+    --overlay: rgba(0, 0, 0, 0.5);
+    
+    /* Animation */
+    --transition-speed: 0.3s;
+    --transition-timing: ease;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    
+    /* Typography */
+    --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-mono: 'SF Mono', Monaco, Consolas, monospace;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    
+    /* Layout */
+    --header-height: 4rem;
+    --sidebar-width: 300px;
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --container-max-width: 1200px;
 }
 
 html, body {
@@ -63,10 +101,21 @@ html, body {
     position: relative;
     overflow: hidden;
 }
-html, body {
-    height: 100%;
-    overflow: hidden;
-    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+/* Base Elements */
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-base);
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .container-fluid {
@@ -275,15 +324,37 @@ html, body {
     animation: water-flow 2s infinite;
 }
 
-/* Theme Variables */
-:root {
-    --soap-blue: #4CA1AF;
-    --water-blue: #2C3E50;
-    --chrome-gray: #E8E8E8;
-    --foam-white: #FFFFFF;
-    --success-green: #4CAF50;
-    --warning-yellow: #FFC107;
-    --error-red: #DC3545;
+/* Common Components */
+.btn {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    border: none;
+    background: var(--primary);
+    color: var(--text);
+    font-weight: 600;
+    transition: all var(--transition-speed) var(--transition-timing);
+    cursor: pointer;
+    
+    &:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+    
+    &.btn-secondary {
+        background: var(--secondary);
+    }
+    
+    &.btn-success {
+        background: var(--success);
+    }
+    
+    &.btn-error {
+        background: var(--error);
+    }
 }
 
 /* Animations */
@@ -434,14 +505,46 @@ html, body {
 }
 
 /* Mobile-specific enhancements */
-@media (max-width: 768px) {
-    .project-card {
-        margin-bottom: 1rem;
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    :root {
+        --container-max-width: 95%;
     }
+}
 
+@media screen and (max-width: 992px) {
+    :root {
+        --sidebar-width: 250px;
+    }
+    
+    .grid-stack {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: 3.5rem;
+        --font-size-base: 0.95rem;
+    }
+    
+    .grid-stack {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 1000;
+        
+        &.active {
+            transform: translateX(0);
+        }
+    }
+    
     .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 1.1rem;
+        padding: var(--space-md) var(--space-lg);
+        font-size: var(--font-size-lg);
     }
 
     .list-group-item {

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agile Defense Systems - Global leader in advanced defense solutions, quantum computing security, and next-generation military technology. Trusted by governments worldwide." />
+    <meta name="keywords" content="quantum defense, AI security systems, hypersonic technology, cyber warfare, military AI, advanced robotics, defense innovation" />
+    <meta name="author" content="Agile Defense Systems">
+    <meta name="theme-color" content="#0B2447">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:;">
+    <meta property="og:title" content="Agile Defense Systems - Advanced Defense Solutions">
+    <meta property="og:description" content="Global leader in quantum defense and military AI technology">
+    <meta property="og:image" content="/images/agile-defense-og.jpg">
+    <meta property="og:url" content="https://www.agiledefense.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Agile Defense Systems - Quantum Defense Solutions</title>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/fonts/quantum-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/images/hero-background.webp" as="image">
+
+    <!-- PWA Support -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Agile Defense Systems",
+    "url": "https://www.agiledefense.com",
+    "logo": "https://www.agiledefense.com/images/logo.svg",
+    "description": "Global leader in quantum defense and military AI technology",
+    "foundingDate": "2010",
+    "award": [
+        {
+        "@type": "Award",
+        "name": "Defense Innovation Award 2023",
+        "awarder": "Defense Technology Institute"
+        }
+    ],
+    "certification": [
+        {
+        "@type": "Certification",
+        "name": "ISO 27001",
+        "issuingOrganization": "ISO"
+        },
+        {
+        "@type": "Certification",
+        "name": "CMMC Level 3",
+        "issuingOrganization": "DoD"
+        }
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Defense Plaza",
+        "addressLocality": "Arlington",
+        "addressRegion": "VA",
+        "postalCode": "22201",
+        "addressCountry": "US"
+    }
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-tomorrow.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/xterm@4.13.0/css/xterm.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.15/dark.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2A2A2A;
+            color: #EDEDED;
+        }
+        .sidebar {
+            background-color: #1F1F1F;
+        }
+        .sidebar .nav-link {
+            color: #B0B0B0;
+        }
+        .sidebar .nav-link.active {
+            color: #3DB8E7;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!-- Advanced Loading Animation -->
+<div class="loader" id="pageLoader">
+    <div class="quantum-spinner"></div>
+</div>
+
+<!-- Announcement Banner -->
+<div class="announcement-banner" role="alert">
+    <div class="container">
+        <p>Awarded Top Defense Contractor 2024 by Defense Technology Magazine</p>
+        <button aria-label="Close announcement" class="close-banner">×</button>
+    </div>
+</div>
+
+<!-- Hero Section with Particle Effects -->
+<section class="hero" aria-label="Hero section">
+    <div id="particles-js" class="hero__particles"></div>
+    <div class="hero__container">
+        <h1 class="glitch-text">Defining the Future of Defense</h1>
+        <p class="hero__subtitle">Quantum Computing · AI Defense Systems · Hypersonic Technology</p>
+        <div class="hero__cta">
+            <a href="/solutions" class="btn btn-quantum">Explore Solutions</a>
+            <a href="/schedule-demo" class="btn btn-hologram">Schedule Demo</a>
+        </div>
+        <div class="hero__credentials">
+            <div class="credential">
+                <img src="/images/iso-27001.svg" alt="ISO 27001 Certified">
+            </div>
+            <div class="credential">
+                <img src="/images/cmmc-badge.svg" alt="CMMC Level 3">
+            </div>
+            <div class="credential">
+                <img src="/images/nist-badge.svg" alt="NIST Compliant">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Innovation Showcase -->
+<section class="innovation-showcase" aria-label="Innovation showcase">
+    <div class="container">
+        <h2 class="section-title">Breaking Boundaries in Defense</h2>
+        <div class="innovation-grid">
+            <div class="innovation-card" data-aos="fade-up">
+                <div class="innovation-card__hologram">
+                    <model-viewer src="/models/quantum-defense.glb" auto-rotate camera-controls></model-viewer>
+                </div>
+                <h3>Quantum Encryption</h3>
+                <p>Next-generation security protocols powered by quantum computing</p>
+            </div>
+            <div class="innovation-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="innovation-card__hologram">
+                    <model-viewer src="/models/ai-defense.glb" auto-rotate camera-controls></model-viewer>
+                </div>
+                <h3>AI Defense Systems</h3>
+                <p>Autonomous threat detection and response systems</p>
+            </div>
+            <div class="innovation-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="innovation-card__hologram">
+                    <model-viewer src="/models/cyber-shield.glb" auto-rotate camera-controls></model-viewer>
+                </div>
+                <h3>Cyber Shield</h3>
+                <p>Advanced cybersecurity with predictive threat analysis</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Case Studies -->
+<section class="case-studies" aria-label="Case studies">
+    <div class="container">
+        <h2 class="section-title">Mission-Critical Deployments</h2>
+        <div class="case-studies__carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+            <div class="case-study-card">
+                <div class="case-study-card__media">
+                    <video autoplay muted loop playsinline>
+                        <source src="/videos/case-study-1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="case-study-card__content">
+                    <h3>Global Defense Network</h3>
+                    <p>Implementing quantum-secure communications across continents</p>
+                    <a href="/case-studies/global-defense" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+            <!-- Additional case study cards -->
+        </div>
+    </div>
+</section>
+
+<div class="d-flex">
+        <!-- Left Sidebar -->
+        <div class="sidebar bg-dark" style="width: 280px; height: 100vh;">
+            <div class="p-3">
+                <h5>Active Models</h5>
+                <div class="mb-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input model-toggle" type="checkbox" id="aidenToggle" value="aiden">
+                        <label class="form-check-label" for="aidenToggle">AIDEN</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input model-toggle" type="checkbox" id="llamaToggle" value="llama">
+                        <label class="form-check-label" for="llamaToggle">LLaMA</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input model-toggle" type="checkbox" id="gemmaToggle" value="gemma">
+                        <label class="form-check-label" for="gemmaToggle">Gemma</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input model-toggle" type="checkbox" id="mistralToggle" value="mistral">
+                        <label class="form-check-label" for="mistralToggle">Mistral</label>
+                    </div>
+                </div>
+                
+                <h5>Model Configuration</h5>
+                <div class="mb-3">
+                    <label class="form-label">Temperature</label>
+                    <input type="range" class="form-range" id="tempRange" min="0" max="2" step="0.1">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Max Tokens</label>
+                    <input type="number" class="form-control" id="maxTokens" value="2048">
+                </div>
+                
+                <h5>Data Import/Export</h5>
+                <div class="btn-group w-100 mb-3">
+                    <button class="btn btn-outline-primary" id="importBtn">
+                        <i class="bi bi-upload"></i> Import
+                    </button>
+                    <button class="btn btn-outline-primary" id="exportBtn">
+                        <i class="bi bi-download"></i> Export
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex-grow-1 vh-100 overflow-auto">
+            <!-- Header -->
+            <header class="dashboard-header p-3 mb-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img id="aidenAvatar" src="/api/avatar" alt="AIDEN Avatar" class="rounded-circle me-3" width="48" height="48">
+                    <div>
+                        <h1 class="h3 mb-0">AIDEN Dashboard</h1>
+                        <p class="text-muted mb-0">Digital Enlightenment Interface</p>
+                    </div>
+                </div>
+                <div class="user-controls">
+                    <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#addWidgetModal">
+                        <i class="bi bi-plus-circle"></i> Add Widget
+                    </button>
+                    <button class="btn btn-outline-primary me-2 d-none d-md-inline-block">
+                        <i class="bi bi-gear-fill"></i> Settings
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="bi bi-person-fill"></i> Profile
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- AIDEN Integration -->
+        <div id="aidenInterface" class="container-fluid mb-4">
+            <div class="card bg-dark">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="bi bi-robot"></i> AIDEN Interface</h5>
+                    <div class="aiden-status">
+                        <span class="badge bg-success" id="aidenConnectionStatus">Connected</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Secure Credential Management -->
+                    <div class="credential-section mb-4 d-none">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="aidenApiKey" placeholder="Enter API Key">
+                            <button class="btn btn-primary" id="saveCredentials">
+                                <i class="bi bi-key"></i> Save Credentials
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Custom Chat Interface -->
+                    <div class="chat-container">
+                        <div id="aidenMessages" class="messages-container mb-3"></div>
+                        <div class="input-section">
+                            <div class="d-flex gap-2 mb-2">
+                                <select class="form-select" id="aidenContextSelect">
+                                    <option value="default">Default Context</option>
+                                    <option value="research">Research Mode</option>
+                                    <option value="analysis">Analysis Mode</option>
+                                </select>
+                                <button class="btn btn-outline-primary" id="clearContext">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                            <div class="input-group">
+                                <textarea class="form-control" id="aidenInput" rows="2" placeholder="Message AIDEN..."></textarea>
+                                <button class="btn btn-primary" id="sendToAiden">
+                                    <i class="bi bi-send"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Chat Interface -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Chat Interface</h5>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-primary" id="clearChat">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-primary" id="exportChat">
+                                    <i class="bi bi-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body chat-container">
+                            <div class="chat-messages" id="chatMessages">
+                                <!-- Messages will be populated here -->
+                            </div>
+                <div class="chat-input-area">
+                    <div class="chat-controls">
+                        <button class="btn btn-outline-primary" id="micBtn" title="Voice Input">
+                            <i class="bi bi-mic"></i>
+                        </button>
+                        <button class="btn btn-outline-primary" id="cameraBtn" title="Camera">
+                            <i class="bi bi-camera"></i>
+                        </button>
+                        <label class="btn btn-outline-primary mb-0" for="fileUpload" title="Upload File">
+                            <i class="bi bi-upload"></i>
+                            <input type="file" id="fileUpload" class="d-none" multiple>
+                        </label>
+                        <button class="btn btn-outline-primary" id="searchBtn" title="Web Search">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="messageInput" placeholder="Type your message...">
+                        <button class="btn btn-primary" id="sendMessage">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="oncology-tab" data-bs-toggle="tab" data-bs-target="#oncology" type="button">
+                    <i class="bi bi-heart-pulse"></i> Oncology
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button">
+                    <i class="bi bi-kanban"></i> Projects
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="collab-tab" data-bs-toggle="tab" data-bs-target="#collaboration" type="button">
+                    <i class="bi bi-people"></i> Collaboration Hub
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="voice-tab" data-bs-toggle="tab" data-bs-target="#voice-chat" type="button">
+                    <i class="bi bi-mic"></i> Voice Chat
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="mobile-tab" data-bs-toggle="tab" data-bs-target="#mobile" type="button">
+                    <i class="bi bi-phone"></i> Mobile Experience
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="desktop-tab" data-bs-toggle="tab" data-bs-target="#desktop" type="button">
+                    <i class="bi bi-display"></i> Desktop
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="dev-tab" data-bs-toggle="tab" data-bs-target="#developer" type="button">
+                    <i class="bi bi-code-square"></i> Developer
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="mainTabContent">
+            <!-- Oncology Dashboard Tab -->
+            <div class="tab-pane fade" id="oncology" role="tabpanel">
+                <div class="container-fluid">
+                    <!-- Patient Overview Section -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-person"></i> Patient Overview</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="patient-search mb-3">
+                                        <input type="text" class="form-control" placeholder="Search patients...">
+                                    </div>
+                                    <div class="patient-stats">
+                                        <canvas id="patientStatsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-clipboard2-pulse"></i> Trial Management</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="trial-progress">
+                                        <canvas id="trialProgressChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Compliance Section -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-shield-check"></i> Compliance Monitoring</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="compliance-status">
+                                        <div class="alert alert-success">
+                                            <i class="bi bi-check-circle"></i> HIPAA Compliant
+                                        </div>
+                                    </div>
+                                    <div class="compliance-chart">
+                                        <canvas id="complianceChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Tab -->
+            <div class="tab-pane fade show active" id="projects" role="tabpanel">
+                <!-- Widget Grid Container -->
+                <div class="grid-stack"></div>
+            </div>
+
+            <!-- Collaboration Hub Tab -->
+            <div class="tab-pane fade" id="collaboration" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Active Collaborators</h5>
+                                <div id="collaboratorsList" class="mb-4">
+                                    <!-- Collaborators will be loaded here -->
+                                </div>
+                                <div id="sharedWorkspace">
+                                    <!-- Shared workspace content -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Team Chat</h5>
+                                <div id="teamChat">
+                                    <!-- Team chat interface -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Chat Tab -->
+            <div class="tab-pane fade" id="voice-chat" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Voice Communication</h5>
+                        <div id="voiceChatInterface">
+                            <!-- Voice chat interface will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Experience Tab -->
+            <div class="tab-pane fade" id="mobile" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile Gesture Guide</h5>
+                        <div id="gestureGuide">
+                            <!-- Mobile gesture guide and settings -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Tab -->
+            <div class="tab-pane fade" id="desktop" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Desktop Interface</h5>
+                        <div id="desktopInterface">
+                            <!-- Desktop specific features -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Developer Tab -->
+            <div class="tab-pane fade" id="developer" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Developer Tools</h5>
+                        <div id="developerTools">
+                            <!-- Developer tools and documentation -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Widget Modal -->
+    <div class="modal fade" id="addWidgetModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Widget</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-select" id="widgetTypeSelect">
+                        <option value="task_summary">Task Summary</option>
+                        <option value="progress_chart">Progress Chart</option>
+                        <option value="recent_activity">Recent Activity</option>
+                        <option value="quick_actions">Quick Actions</option>
+                        <option value="milestone_tracker">Milestone Tracker</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="addWidgetBtn">Add Widget</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Preview Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="previewContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm@4.13.0/lib/xterm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+    <script src="/static/js/projects.js"></script>
+    <script src="/static/js/widget-system.js"></script>
+    <script src="/static/js/command-wizard.js"></script>
+    <script src="/static/js/voice-commands.js"></script>
+    <script src="/static/js/chat-interface.js"></script>
+    <script src="/static/js/aiden-integration.js"></script>
+    <script src="/static/js/multi-model-chat.js"></script>
+<!-- Advanced Footer with Interactive Elements -->
+<footer class="footer" role="contentinfo">
+    <div class="footer__world-map">
+        <div id="globalPresence"></div>
+    </div>
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__info">
+                <img src="/images/logo-quantum.svg" alt="Agile Defense Systems Logo" class="footer__logo">
+                <p>Pioneering the future of defense technology with quantum computing and AI-driven solutions.</p>
+                <div class="certifications">
+                    <img src="/images/iso-27001.svg" alt="ISO 27001" class="certification-badge">
+                    <img src="/images/cmmc-l3.svg" alt="CMMC Level 3" class="certification-badge">
+                    <img src="/images/nist-800-171.svg" alt="NIST 800-171" class="certification-badge">
+                </div>
+            </div>
+            <div class="footer__solutions">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="/quantum-defense">Quantum Defense</a></li>
+                    <li><a href="/ai-systems">AI Systems</a></li>
+                    <li><a href="/cyber-security">Cyber Security</a></li>
+                    <li><a href="/hypersonic">Hypersonic Technology</a></li>
+                </ul>
+            </div>
+            <div class="footer__company">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/leadership">Leadership</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/press">Press Room</a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <h4>Contact</h4>
+                <address>
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>100 Defense Plaza<br>Arlington, VA 22201</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-telephone"></i>
+                        <a href="tel:+1-703-555-0123">703-555-0123</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <a href="mailto:info@agiledefense.com">info@agiledefense.com</a>
+                    </div>
+                </address>
+            </div>
+            <div class="footer__newsletter">
+                <h4>Stay Informed</h4>
+                <p>Subscribe to our defense technology insights newsletter</p>
+                <form class="newsletter-form" action="/subscribe" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-quantum">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__social">
+                <a href="https://linkedin.com/company/agile-defense" aria-label="LinkedIn" class="social-link">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/agiledefense" aria-label="Twitter" class="social-link">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="https://github.com/agiledefense" aria-label="GitHub" class="social-link">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2024 Agile Defense Systems. All rights reserved.</p>
+                <nav class="legal-nav">
+                    <a href="/privacy">Privacy</a>
+                    <a href="/terms">Terms</a>
+                    <a href="/security">Security</a>
+                    <a href="/compliance">Compliance</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cookie Consent -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience and analyze site performance.</p>
+            <div class="cookie-buttons">
+                <button class="btn btn-quantum-sm" id="acceptCookies">Accept All</button>
+                <button class="btn btn-outline-quantum-sm" id="customizeCookies">Customize</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Live Chat Widget -->
+<div class="live-chat-widget" id="liveChat">
+    <button class="chat-toggle" aria-label="Toggle live chat">
+        <i class="bi bi-chat-dots"></i>
+    </button>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Additional Scripts -->
+<script src="https://unpkg.com/@google/model-viewer" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flickity@2.3.0/dist/flickity.pkgd.min.js"></script>
+<script src="/js/quantum-effects.js"></script>
+<script src="/js/global-presence.js"></script>
+</body>
+</html>

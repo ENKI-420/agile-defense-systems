@@ -1,0 +1,137 @@
+:root {
+--primary-color: #1a2b3c;
+--secondary-color: #2c4b6e;
+--accent-color: #4a90e2;
+--quantum-glow: 0 0 15px rgba(74, 144, 226, 0.3);
+--military-green: #4a5d23;
+--text-light: #e6e6e6;
+--text-dark: #333;
+}
+
+/* Quantum Animations */
+@keyframes quantum-fade {
+0% { opacity: 0; transform: translateY(20px); }
+100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes quantum-pulse {
+0% { box-shadow: var(--quantum-glow); }
+50% { box-shadow: 0 0 25px rgba(74, 144, 226, 0.5); }
+100% { box-shadow: var(--quantum-glow); }
+}
+
+/* Company Overview Styles */
+.company-overview {
+background: var(--primary-color);
+color: var(--text-light);
+padding: 4rem 2rem;
+}
+
+.quantum-grid {
+display: grid;
+gap: 2rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.division-card {
+background: rgba(44, 75, 110, 0.9);
+border-radius: 8px;
+padding: 2rem;
+transition: transform 0.3s ease;
+animation: quantum-pulse 3s infinite;
+}
+
+.division-card:hover {
+transform: translateY(-5px);
+}
+
+/* Leadership Profile Styles */
+.leadership-profile {
+background: var(--secondary-color);
+padding: 4rem 2rem;
+}
+
+.profile-header {
+display: flex;
+align-items: center;
+gap: 2rem;
+margin-bottom: 3rem;
+}
+
+.timeline {
+position: relative;
+padding: 2rem 0;
+}
+
+.timeline-item {
+display: flex;
+gap: 2rem;
+margin-bottom: 2rem;
+}
+
+.timeline-marker {
+width: 16px;
+height: 16px;
+background: var(--accent-color);
+border-radius: 50%;
+position: relative;
+}
+
+/* Capabilities Styles */
+.capabilities {
+background: var(--primary-color);
+padding: 4rem 2rem;
+}
+
+.capability-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+}
+
+.card {
+background: rgba(44, 75, 110, 0.9);
+border-radius: 8px;
+padding: 2rem;
+transition: all 0.3s ease;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: var(--quantum-glow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.profile-header {
+    flex-direction: column;
+    text-align: center;
+}
+
+.capability-cards {
+    grid-template-columns: 1fr;
+}
+
+.division-cards {
+    grid-template-columns: 1fr;
+}
+}
+
+/* Accessibility */
+.visually-hidden {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+border: 0;
+}
+
+*:focus {
+outline: 3px solid var(--accent-color);
+outline-offset: 2px;
+}
+

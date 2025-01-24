@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDEN - Jake's Digital Enlightenment</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!-- Chat Interface -->
+            <div class="col-md-8 col-lg-9 h-100 d-flex flex-column">
+                <div class="chat-header p-3 d-flex align-items-center">
+                    <div class="avatar-container me-3">
+                        <img id="aidenAvatar" src="" alt="AIDEN Avatar" class="rounded-circle" width="64" height="64">
+                    </div>
+                    <div>
+                        <h2>AIDEN - Jake's Digital Enlightenment</h2>
+                        <p class="text-muted">Your Partner in Creative Actualization & Digital Innovation</p>
+                    </div>
+                </div>
+
+                <div class="chat-messages flex-grow-1 p-3" id="messageContainer">
+                    <!-- Messages will be inserted here by JavaScript -->
+                </div>
+
+                <div class="chat-input p-3">
+                    <form id="messageForm" class="d-flex gap-2">
+                        <input type="text" class="form-control" id="messageInput" placeholder="Share your ideas, ambitions, or ask for guidance...">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="col-md-4 col-lg-3 bg-dark p-3 hotkey-sidebar">
+                <h4>Partnership Tools</h4>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <strong>I</strong> - Idea Vault
+                    </div>
+                    <div class="list-group-item">
+                        <strong>P</strong> - Project Planning
+                    </div>
+                    <div class="list-group-item">
+                        <strong>R</strong> - Resource Finder
+                    </div>
+                    <div class="list-group-item">
+                        <strong>M</strong> - Motivation Boost
+                    </div>
+                    <div class="list-group-item">
+                        <strong>C</strong> - Car Wash Controls
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/js/aidenIntegration.js"></script>
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>

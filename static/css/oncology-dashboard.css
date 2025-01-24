@@ -1,0 +1,48 @@
+/* Oncology Dashboard Styles */
+.patient-search {
+    position: relative;
+}
+
+.patient-search input {
+    padding-left: 2.5rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.patient-search::before {
+    content: "\F52A";
+    font-family: "bootstrap-icons";
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.patient-stats, .trial-progress, .compliance-chart {
+    height: 300px;
+    margin: 1rem 0;
+}
+
+.compliance-status {
+    margin-bottom: 1rem;
+}
+
+.compliance-status .alert {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Dark theme overrides */
+[data-bs-theme="dark"] .patient-search input {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #1f1f1f;
+    border-color: #444;
+}
+

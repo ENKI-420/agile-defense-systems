@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGILE DEFENSE SYSTEMS Research - AIDEN</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#overview">
+                                <i class="bi bi-house-door"></i> Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#advanced-weapons">
+                                <i class="bi bi-shield"></i> Advanced Weapons
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#propulsion">
+                                <i class="bi bi-rocket"></i> Advanced Propulsion
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#archaeological">
+                                <i class="bi bi-pyramid"></i> Archaeological Studies
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#metallurgy">
+                                <i class="bi bi-gear"></i> Metallurgy Research
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1>AGILE DEFENSE SYSTEMS Research Hub</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="bi bi-plus-lg"></i> New Project
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-file-earmark-text"></i> Export Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Research Categories -->
+                <div class="row g-4 py-3">
+                    {% for category in research_categories %}
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">{{ category.name }}</h5>
+                                <span class="badge bg-primary">{{ category.projects|length }} Projects</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group">
+                                    {% for project in category.projects %}
+                                    <div class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">{{ project.title }}</h6>
+                                            <small class="text-muted">{{ project.status }}</small>
+                                        </div>
+                                        <p class="mb-1">{{ project.description }}</p>
+                                        <div class="d-flex justify-content-between align-items-center mt-2">
+                                            <small class="text-muted">Updated: {{ project.updated_at|datetime }}</small>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Document Repository -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Document Repository</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Document Title</th>
+                                                <th>Project</th>
+                                                <th>Type</th>
+                                                <th>Uploaded</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for doc in documents %}
+                                            <tr>
+                                                <td>{{ doc.title }}</td>
+                                                <td>{{ doc.project.title }}</td>
+                                                <td>{{ doc.document_type }}</td>
+                                                <td>{{ doc.uploaded_at|datetime }}</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary">View</button>
+                                                    <button class="btn btn-sm btn-outline-secondary">Download</button>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/ads-research.js"></script>
+</body>
+</html>

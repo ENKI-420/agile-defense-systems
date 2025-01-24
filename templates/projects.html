@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDEN - Innovation Station</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-9 p-4">
+                <div class="card bg-dark mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2><i class="bi bi-water me-2"></i>Innovation Station</h2>
+                                <p class="text-muted">Where ideas flow and ambitions shine</p>
+                            </div>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProjectModal">
+                                <i class="bi bi-plus-circle"></i> New Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Projects -->
+                <div class="row g-4 mb-5">
+                    {% for project in active_projects %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-{% if project.category == 'car_wash' %}droplet{% else %}lightbulb{% endif %} me-2"></i>
+                                    <h5 class="card-title mb-0">{{ project.title }}</h5>
+                                </div>
+                                <p class="card-text">{{ project.description }}</p>
+                                <div class="progress mb-3" style="height: 10px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" 
+                                         role="progressbar" 
+                                         style="width: {{ project.progress }}%"
+                                         aria-valuenow="{{ project.progress }}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-info">{{ project.category }}</span>
+                                    <button class="btn btn-outline-info btn-sm" 
+                                            onclick="viewProject({{ project.id }})">
+                                        <i class="bi bi-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Project Milestones -->
+                <div class="card bg-dark mb-4">
+                    <div class="card-body">
+                        <h3><i class="bi bi-flag me-2"></i>Upcoming Milestones</h3>
+                        <div class="list-group list-group-flush">
+                            {% for milestone in upcoming_milestones %}
+                            <div class="list-group-item bg-dark">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">{{ milestone.title }}</h5>
+                                    <small class="text-info">{{ milestone.target_date }}</small>
+                                </div>
+                                <p class="mb-1">{{ milestone.description }}</p>
+                                <small class="text-muted">Project: {{ milestone.goal.title }}</small>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AIDEN's Corner -->
+            <div class="col-md-3 bg-dark p-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4><i class="bi bi-robot"></i> AIDEN's Corner</h4>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Daily Inspiration</h5>
+                                <p class="card-text" id="motivationText">
+                                    {{ motivation_message }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Pulse</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-gear-fill me-2"></i>Active Projects: {{ stats.active_projects }}</li>
+                                    <li><i class="bi bi-check-circle-fill me-2"></i>Completed This Week: {{ stats.completed_this_week }}</li>
+                                    <li><i class="bi bi-calendar-event me-2"></i>Upcoming Deadlines: {{ stats.upcoming_deadlines }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Project Modal -->
+    <div class="modal fade" id="newProjectModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-plus-circle me-2"></i>Start New Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newProjectForm">
+                        <div class="mb-3">
+                            <label for="projectTitle" class="form-label">Project Title</label>
+                            <input type="text" class="form-control" id="projectTitle" required
+                                   placeholder="Give your project a catchy name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="projectDescription" rows="3"
+                                    placeholder="What's your vision for this project?"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectCategory" class="form-label">Category</label>
+                            <select class="form-select" id="projectCategory">
+                                <option value="car_wash">Car Wash Innovation</option>
+                                <option value="business">Business Venture</option>
+                                <option value="personal">Personal Goal</option>
+                                <option value="innovation">Creative Innovation</option>
+                                <option value="technology">Tech Project</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info" onclick="createProject()">
+                        <i class="bi bi-play-fill"></i> Launch Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/projects.js"></script>
+    <script src="/static/js/command-wizard.js"></script>
+    <script src="/static/js/voice-commands.js"></script>
+</body>
+</html>

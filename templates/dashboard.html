@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}AIDEN - Operations & Music Dashboard{% endblock %}
+
+{% block content %}
+    <div class="security-status p-3">
+        <div class="badge badge-danger">Classification: TOP SECRET</div>
+        <div class="badge badge-warning">Clearance Required: TS/SCI</div>
+        <div class="badge badge-info">Project Status: ACTIVE</div>
+    </div>
+
+    <div class="container-fluid dashboard-container">
+        <!-- Global Search -->
+        <div class="search-container my-3">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="search" class="form-control" placeholder="Search projects, documents, or research data..." 
+                    aria-label="Global search" id="globalSearch">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Filters
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" data-filter="projects">Projects</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="documents">Documents</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="research">Research Data</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="dashboard-header p-3 mb-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img id="aidenAvatar" src="{{ url_for('api.avatar') }}" alt="AIDEN Avatar" class="rounded-circle me-3" width="48" height="48">
+                    <div>
+                        <h1 class="h3 mb-0">Operations & Music Dashboard</h1>
+                        <p class="text-muted mb-0">Tedd - Director of Operations, Agile Defense Systems</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="operations-tab" data-bs-toggle="tab" data-bs-target="#operations" type="button">
+                    <i class="bi bi-briefcase"></i> Operations Overview
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="defense-tab" data-bs-toggle="tab" data-bs-target="#defense" type="button">
+                    <i class="bi bi-shield"></i> Defense Systems
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music" type="button">
+                    <i class="bi bi-music-note"></i> Music Studio
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="mainTabContent">
+            <!-- Operations Overview Tab -->
+            <div class="tab-pane fade show active" id="operations" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Active Projects</h5>
+                                <div id="projectsList">
+                                    <!-- Projects will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Statistics</h5>
+                                <div id="operationsStats">
+                                    <!-- Stats will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Defense Systems Tab -->
+            <div class="tab-pane fade" id="defense" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Research Projects</h5>
+                        <div id="researchProjectsList">
+                            <!-- Research projects will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music Studio Tab -->
+            <div class="tab-pane fade" id="music" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Music Activities</h5>
+                        <div id="musicActivities">
+                            <!-- Music activities will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    {% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    {% endblock %}

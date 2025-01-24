@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" class="defense-portal">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AGILE DEFENSE SYSTEMS Research Dashboard - Advanced Defense Research and Development">
+    <meta name="classification" content="TOP SECRET//SCI//NOFORN">
+    <meta name="security-level" content="TS/SCI">
+    <meta name="handling-instructions" content="SPECIAL ACCESS REQUIRED">
+    
+    {# CSRF Token #}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    {# Security Headers #}
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline';">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+    <title>{% block title %}AGILE DEFENSE SYSTEMS - Secure Defense Solutions{% endblock %}</title>
+    
+    {# Favicon #}
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+    
+    {# Core CSS #}
+    {% block styles %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    {% endblock %}
+    
+    {# Core JavaScript #}
+    {% block head_scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    {% endblock %}
+</head>
+
+<body>
+    {# Classification Banners #}
+    <div class="classification-banner top">
+        <div class="classification-text">TOP SECRET//SCI//NOFORN</div>
+        <div class="classification-warning">CLASSIFIED INFORMATION - Authorized Access Only</div>
+        <div class="access-level">Access Level: TS/SCI - Special Access Required</div>
+    </div>
+    
+    {# Flash Messages #}
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    
+    {# Main Content #}
+    <div class="container-fluid h-100">
+        {% block content %}
+        <div class="security-status">
+            <div class="badge badge-danger">Classification: TOP SECRET</div>
+            <div class="badge badge-warning">Clearance Required: TS/SCI</div>
+            <div class="badge badge-info">Project Status: ACTIVE</div>
+        </div>
+        
+        <div class="row h-100">
+            {# Chat Interface #}
+            <div class="col-md-8 col-lg-9 h-100 d-flex flex-column">
+                {% block chat_interface %}{% endblock %}
+            </div>
+            
+            {# Quick Actions Sidebar #}
+            <div class="col-md-4 col-lg-3 bg-dark p-3 hotkey-sidebar">
+                {% block quick_actions %}{% endblock %}
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+    
+    <div class="classification-banner bottom">
+        <div class="classification-text">TOP SECRET//SCI//NOFORN</div>
+    </div>
+    
+    {# Core JavaScript at end of body #}
+    {% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/aidenIntegration.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    
+    {# CSRF Token JavaScript Setup #}
+    <script>
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add CSRF token to all AJAX requests
+            const headers = new Headers({
+                'X-CSRF-TOKEN': csrfToken
+            });
+        });
+    </script>
+    {% endblock %}
+</body>
+</html>
+

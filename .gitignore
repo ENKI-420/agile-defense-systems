@@ -70,3 +70,4 @@ attached_assets/
 **/config/secrets/*
 classified/
 sensitive/
+.vercel

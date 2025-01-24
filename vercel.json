@@ -1,0 +1,73 @@
+{
+"headers": [
+    {
+    "source": "/(.*)",
+    "headers": [
+        {
+        "key": "Content-Security-Policy",
+        "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' wss://*.vercel.app ws://*.vercel.app; media-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+        },
+        {
+        "key": "X-Content-Type-Options",
+        "value": "nosniff"
+        },
+        {
+        "key": "X-Frame-Options",
+        "value": "DENY"
+        },
+        {
+        "key": "X-XSS-Protection",
+        "value": "1; mode=block"
+        },
+        {
+        "key": "Referrer-Policy",
+        "value": "strict-origin-when-cross-origin"
+        },
+        {
+        "key": "Permissions-Policy",
+        "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        }
+    ]
+    },
+    {
+    "source": "/static/(.*)",
+    "headers": [
+        {
+        "key": "Cache-Control",
+        "value": "public, max-age=31536000, immutable"
+        }
+    ]
+    },
+    {
+    "source": "/_next/static/(.*)",
+    "headers": [
+        {
+        "key": "Cache-Control",
+        "value": "public, max-age=31536000, immutable"
+        }
+    ]
+    }
+],
+"routes": [
+    {
+    "src": "/api/(.*)",
+    "dest": "/api/$1",
+    "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    "headers": {
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+    }
+    }
+],
+"builds": [
+    {
+    "src": "package.json",
+    "use": "@vercel/next"
+    }
+],
+"env": {
+    "NODE_ENV": "production"
+}
+}
+

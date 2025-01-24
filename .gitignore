@@ -71,3 +71,5 @@ attached_assets/
 classified/
 sensitive/
 .vercel
+static/images/
+vercel.json

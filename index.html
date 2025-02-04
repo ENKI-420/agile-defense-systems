@@ -1,536 +1,233 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agile Defense Systems - Global leader in advanced defense solutions, quantum computing security, and next-generation military technology. Trusted by governments worldwide." />
-    <meta name="keywords" content="quantum defense, AI security systems, hypersonic technology, cyber warfare, military AI, advanced robotics, defense innovation" />
+    <meta name="description" content="Agile Defense Systems research hub featuring cutting-edge defense technologies and advancements in weaponry, propulsion, and archaeology.">
+    <meta name="keywords" content="Agile Defense, Research, Weaponry, Propulsion, Metallurgy, Archaeology, Defense Technologies">
     <meta name="author" content="Agile Defense Systems">
-    <meta name="theme-color" content="#0B2447">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:;">
-    <meta property="og:title" content="Agile Defense Systems - Advanced Defense Solutions">
-    <meta property="og:description" content="Global leader in quantum defense and military AI technology">
-    <meta property="og:image" content="/images/agile-defense-og.jpg">
-    <meta property="og:url" content="https://www.agiledefense.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Agile Defense Systems - Quantum Defense Solutions</title>
+    <title>AIDEN - Digital Enlightenment Dashboard</title>
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/fonts/quantum-sans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/images/hero-background.webp" as="image">
+    <!-- Minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css">
 
-    <!-- PWA Support -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Agile Defense Systems",
-    "url": "https://www.agiledefense.com",
-    "logo": "https://www.agiledefense.com/images/logo.svg",
-    "description": "Global leader in quantum defense and military AI technology",
-    "foundingDate": "2010",
-    "award": [
-        {
-        "@type": "Award",
-        "name": "Defense Innovation Award 2023",
-        "awarder": "Defense Technology Institute"
-        }
-    ],
-    "certification": [
-        {
-        "@type": "Certification",
-        "name": "ISO 27001",
-        "issuingOrganization": "ISO"
-        },
-        {
-        "@type": "Certification",
-        "name": "CMMC Level 3",
-        "issuingOrganization": "DoD"
-        }
-    ],
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "100 Defense Plaza",
-        "addressLocality": "Arlington",
-        "addressRegion": "VA",
-        "postalCode": "22201",
-        "addressCountry": "US"
-    }
-    }
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-tomorrow.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/xterm@4.13.0/css/xterm.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.15/dark.min.css" rel="stylesheet">
-    <link href="/static/css/styles.css" rel="stylesheet">
     <style>
         body {
             background-color: #2A2A2A;
             color: #EDEDED;
         }
+
         .sidebar {
             background-color: #1F1F1F;
         }
+
         .sidebar .nav-link {
             color: #B0B0B0;
         }
+
         .sidebar .nav-link.active {
             color: #3DB8E7;
             font-weight: bold;
         }
+
+        .dark-mode {
+            background-color: #2A2A2A;
+            color: #EDEDED;
+        }
+
+        .light-mode {
+            background-color: #FFFFFF;
+            color: #333333;
+        }
     </style>
 </head>
+
 <body>
-<!-- Advanced Loading Animation -->
-<div class="loader" id="pageLoader">
-    <div class="quantum-spinner"></div>
-</div>
-
-<!-- Announcement Banner -->
-<div class="announcement-banner" role="alert">
-    <div class="container">
-        <p>Awarded Top Defense Contractor 2024 by Defense Technology Magazine</p>
-        <button aria-label="Close announcement" class="close-banner">×</button>
-    </div>
-</div>
-
-<!-- Hero Section with Particle Effects -->
-<section class="hero" aria-label="Hero section">
-    <div id="particles-js" class="hero__particles"></div>
-    <div class="hero__container">
-        <h1 class="glitch-text">Defining the Future of Defense</h1>
-        <p class="hero__subtitle">Quantum Computing · AI Defense Systems · Hypersonic Technology</p>
-        <div class="hero__cta">
-            <a href="/solutions" class="btn btn-quantum">Explore Solutions</a>
-            <a href="/schedule-demo" class="btn btn-hologram">Schedule Demo</a>
-        </div>
-        <div class="hero__credentials">
-            <div class="credential">
-                <img src="/images/iso-27001.svg" alt="ISO 27001 Certified">
-            </div>
-            <div class="credential">
-                <img src="/images/cmmc-badge.svg" alt="CMMC Level 3">
-            </div>
-            <div class="credential">
-                <img src="/images/nist-badge.svg" alt="NIST Compliant">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Innovation Showcase -->
-<section class="innovation-showcase" aria-label="Innovation showcase">
-    <div class="container">
-        <h2 class="section-title">Breaking Boundaries in Defense</h2>
-        <div class="innovation-grid">
-            <div class="innovation-card" data-aos="fade-up">
-                <div class="innovation-card__hologram">
-                    <model-viewer src="/models/quantum-defense.glb" auto-rotate camera-controls></model-viewer>
-                </div>
-                <h3>Quantum Encryption</h3>
-                <p>Next-generation security protocols powered by quantum computing</p>
-            </div>
-            <div class="innovation-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="innovation-card__hologram">
-                    <model-viewer src="/models/ai-defense.glb" auto-rotate camera-controls></model-viewer>
-                </div>
-                <h3>AI Defense Systems</h3>
-                <p>Autonomous threat detection and response systems</p>
-            </div>
-            <div class="innovation-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="innovation-card__hologram">
-                    <model-viewer src="/models/cyber-shield.glb" auto-rotate camera-controls></model-viewer>
-                </div>
-                <h3>Cyber Shield</h3>
-                <p>Advanced cybersecurity with predictive threat analysis</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Interactive Case Studies -->
-<section class="case-studies" aria-label="Case studies">
-    <div class="container">
-        <h2 class="section-title">Mission-Critical Deployments</h2>
-        <div class="case-studies__carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
-            <div class="case-study-card">
-                <div class="case-study-card__media">
-                    <video autoplay muted loop playsinline>
-                        <source src="/videos/case-study-1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="case-study-card__content">
-                    <h3>Global Defense Network</h3>
-                    <p>Implementing quantum-secure communications across continents</p>
-                    <a href="/case-studies/global-defense" class="btn btn-outline">Read More</a>
-                </div>
-            </div>
-            <!-- Additional case study cards -->
-        </div>
-    </div>
-</section>
-
-<div class="d-flex">
+    <div class="d-flex">
         <!-- Left Sidebar -->
-        <div class="sidebar bg-dark" style="width: 280px; height: 100vh;">
-            <div class="p-3">
-                <h5>Active Models</h5>
-                <div class="mb-3">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input model-toggle" type="checkbox" id="aidenToggle" value="aiden">
-                        <label class="form-check-label" for="aidenToggle">AIDEN</label>
-                    </div>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input model-toggle" type="checkbox" id="llamaToggle" value="llama">
-                        <label class="form-check-label" for="llamaToggle">LLaMA</label>
-                    </div>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input model-toggle" type="checkbox" id="gemmaToggle" value="gemma">
-                        <label class="form-check-label" for="gemmaToggle">Gemma</label>
-                    </div>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input model-toggle" type="checkbox" id="mistralToggle" value="mistral">
-                        <label class="form-check-label" for="mistralToggle">Mistral</label>
-                    </div>
+        <nav class="sidebar bg-dark flex-shrink-0 p-3" style="width: 280px; height: 100vh;">
+            <h5>Active Models</h5>
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="aidenToggle" value="aiden">
+                    <label class="form-check-label" for="aidenToggle">AIDEN</label>
                 </div>
-                
-                <h5>Model Configuration</h5>
-                <div class="mb-3">
-                    <label class="form-label">Temperature</label>
-                    <input type="range" class="form-range" id="tempRange" min="0" max="2" step="0.1">
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="llamaToggle" value="llama">
+                    <label class="form-check-label" for="llamaToggle">LLaMA</label>
                 </div>
-                
-                <div class="mb-3">
-                    <label class="form-label">Max Tokens</label>
-                    <input type="number" class="form-control" id="maxTokens" value="2048">
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="gemmaToggle" value="gemma">
+                    <label class="form-check-label" for="gemmaToggle">Gemma</label>
                 </div>
-                
-                <h5>Data Import/Export</h5>
-                <div class="btn-group w-100 mb-3">
-                    <button class="btn btn-outline-primary" id="importBtn">
-                        <i class="bi bi-upload"></i> Import
-                    </button>
-                    <button class="btn btn-outline-primary" id="exportBtn">
-                        <i class="bi bi-download"></i> Export
-                    </button>
+                <div class="form-check form-switch">
+                    <input class="form-check-input model-toggle" type="checkbox" id="mistralToggle" value="mistral">
+                    <label class="form-check-label" for="mistralToggle">Mistral</label>
                 </div>
             </div>
-        </div>
-        
+
+            <h5>Model Configuration</h5>
+            <div class="mb-3">
+                <label class="form-label">Temperature</label>
+                <input type="range" class="form-range" id="tempRange" min="0" max="2" step="0.1">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Max Tokens</label>
+                <input type="number" class="form-control" id="maxTokens" value="2048">
+            </div>
+
+            <h5>Data Import/Export</h5>
+            <div class="btn-group w-100 mb-3">
+                <button class="btn btn-outline-primary" id="importBtn">
+                    <i class="bi bi-upload"></i> Import
+                </button>
+                <button class="btn btn-outline-primary" id="exportBtn">
+                    <i class="bi bi-download"></i> Export
+                </button>
+            </div>
+        </nav>
+
         <!-- Main Content -->
         <div class="flex-grow-1 vh-100 overflow-auto">
             <!-- Header -->
-            <header class="dashboard-header p-3 mb-4">
-            <div class="d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                    <img id="aidenAvatar" src="/api/avatar" alt="AIDEN Avatar" class="rounded-circle me-3" width="48" height="48">
-                    <div>
-                        <h1 class="h3 mb-0">AIDEN Dashboard</h1>
-                        <p class="text-muted mb-0">Digital Enlightenment Interface</p>
-                    </div>
-                </div>
-                <div class="user-controls">
-                    <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#addWidgetModal">
-                        <i class="bi bi-plus-circle"></i> Add Widget
-                    </button>
-                    <button class="btn btn-outline-primary me-2 d-none d-md-inline-block">
-                        <i class="bi bi-gear-fill"></i> Settings
-                    </button>
-                    <button class="btn btn-primary">
-                        <i class="bi bi-person-fill"></i> Profile
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- AIDEN Integration -->
-        <div id="aidenInterface" class="container-fluid mb-4">
-            <div class="card bg-dark">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"><i class="bi bi-robot"></i> AIDEN Interface</h5>
-                    <div class="aiden-status">
-                        <span class="badge bg-success" id="aidenConnectionStatus">Connected</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Secure Credential Management -->
-                    <div class="credential-section mb-4 d-none">
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="aidenApiKey" placeholder="Enter API Key">
-                            <button class="btn btn-primary" id="saveCredentials">
-                                <i class="bi bi-key"></i> Save Credentials
-                            </button>
+            <header class="dashboard-header p-3 mb-4 bg-dark text-white">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-person-circle fs-1 me-3"></i>
+                        <div>
+                            <h1 class="h3 mb-0">AIDEN Dashboard</h1>
+                            <p class="text-muted mb-0">Digital Enlightenment Interface</p>
                         </div>
                     </div>
-                    
-                    <!-- Custom Chat Interface -->
-                    <div class="chat-container">
-                        <div id="aidenMessages" class="messages-container mb-3"></div>
-                        <div class="input-section">
-                            <div class="d-flex gap-2 mb-2">
-                                <select class="form-select" id="aidenContextSelect">
-                                    <option value="default">Default Context</option>
-                                    <option value="research">Research Mode</option>
-                                    <option value="analysis">Analysis Mode</option>
-                                </select>
-                                <button class="btn btn-outline-primary" id="clearContext">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </div>
-                            <div class="input-group">
-                                <textarea class="form-control" id="aidenInput" rows="2" placeholder="Message AIDEN..."></textarea>
-                                <button class="btn btn-primary" id="sendToAiden">
-                                    <i class="bi bi-send"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Content Area -->
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Chat Interface -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0">Chat Interface</h5>
-                            <div class="btn-group">
-                                <button class="btn btn-sm btn-outline-primary" id="clearChat">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-primary" id="exportChat">
-                                    <i class="bi bi-download"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body chat-container">
-                            <div class="chat-messages" id="chatMessages">
-                                <!-- Messages will be populated here -->
-                            </div>
-                <div class="chat-input-area">
-                    <div class="chat-controls">
-                        <button class="btn btn-outline-primary" id="micBtn" title="Voice Input">
-                            <i class="bi bi-mic"></i>
+                    <div class="user-controls">
+                        <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#addWidgetModal">
+                            <i class="bi bi-plus-circle"></i> Add Widget
                         </button>
-                        <button class="btn btn-outline-primary" id="cameraBtn" title="Camera">
-                            <i class="bi bi-camera"></i>
+                        <button class="btn btn-outline-primary me-2">
+                            <i class="bi bi-gear-fill"></i> Settings
                         </button>
-                        <label class="btn btn-outline-primary mb-0" for="fileUpload" title="Upload File">
-                            <i class="bi bi-upload"></i>
-                            <input type="file" id="fileUpload" class="d-none" multiple>
-                        </label>
-                        <button class="btn btn-outline-primary" id="searchBtn" title="Web Search">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="messageInput" placeholder="Type your message...">
-                        <button class="btn btn-primary" id="sendMessage">
-                            <i class="bi bi-send"></i>
+                        <button class="btn btn-primary">
+                            <i class="bi bi-person-fill"></i> Profile
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </header>
 
-        <!-- Navigation Tabs -->
-        <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="oncology-tab" data-bs-toggle="tab" data-bs-target="#oncology" type="button">
-                    <i class="bi bi-heart-pulse"></i> Oncology
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button">
-                    <i class="bi bi-kanban"></i> Projects
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="collab-tab" data-bs-toggle="tab" data-bs-target="#collaboration" type="button">
-                    <i class="bi bi-people"></i> Collaboration Hub
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="voice-tab" data-bs-toggle="tab" data-bs-target="#voice-chat" type="button">
-                    <i class="bi bi-mic"></i> Voice Chat
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="mobile-tab" data-bs-toggle="tab" data-bs-target="#mobile" type="button">
-                    <i class="bi bi-phone"></i> Mobile Experience
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="desktop-tab" data-bs-toggle="tab" data-bs-target="#desktop" type="button">
-                    <i class="bi bi-display"></i> Desktop
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="dev-tab" data-bs-toggle="tab" data-bs-target="#developer" type="button">
-                    <i class="bi bi-code-square"></i> Developer
-                </button>
-            </li>
-        </ul>
-
-        <!-- Tab Content -->
-        <div class="tab-content" id="mainTabContent">
-            <!-- Oncology Dashboard Tab -->
-            <div class="tab-pane fade" id="oncology" role="tabpanel">
-                <div class="container-fluid">
-                    <!-- Patient Overview Section -->
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5><i class="bi bi-person"></i> Patient Overview</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="patient-search mb-3">
-                                        <input type="text" class="form-control" placeholder="Search patients...">
-                                    </div>
-                                    <div class="patient-stats">
-                                        <canvas id="patientStatsChart"></canvas>
+            <!-- Dynamic Content -->
+            <!-- Dynamic Content -->
+            <main class="container-fluid">
+                <!-- Control Panel -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Control Panel</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Input Controls -->
+                                <div class="mb-3">
+                                    <h6 class="mb-2">Input Controls</h6>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary" id="attachFileBtn">
+                                            <i class="bi bi-paperclip"></i> Attach File
+                                        </button>
+                                        <button class="btn btn-primary" id="voiceBtn">
+                                            <i class="bi bi-mic"></i> Voice
+                                        </button>
+                                        <button class="btn btn-primary" id="imageCreateBtn">
+                                            <i class="bi bi-image"></i> Create Image
+                                        </button>
+                                        <button class="btn btn-primary" id="cameraBtn">
+                                            <i class="bi bi-camera-video"></i> Camera
+                                        </button>
+                                        <button class="btn btn-primary" id="searchBtn">
+                                            <i class="bi bi-search"></i> Perplexity Search
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5><i class="bi bi-clipboard2-pulse"></i> Trial Management</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="trial-progress">
-                                        <canvas id="trialProgressChart"></canvas>
+                                <!-- Mode Selection -->
+                                <div>
+                                    <h6 class="mb-2">Mode Selection</h6>
+                                    <div class="btn-group">
+                                        <button class="btn btn-outline-secondary" id="researchMode">
+                                            <i class="bi bi-search"></i> Research
+                                        </button>
+                                        <button class="btn btn-outline-secondary active" id="generalMode">
+                                            <i class="bi bi-chat"></i> General Chat
+                                        </button>
+                                        <button class="btn btn-outline-secondary" id="proposalMode">
+                                            <i class="bi bi-file-text"></i> Proposal
+                                        </button>
+                                        <button class="btn btn-outline-secondary" id="webdevMode">
+                                            <i class="bi bi-code-square"></i> Web Dev
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Compliance Section -->
-                    <div class="row mb-4">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5><i class="bi bi-shield-check"></i> Compliance Monitoring</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                            <div class="card-header">
+                                <h5>Chat Interface</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="chatMessages" class="chat-messages mb-3" style="height: 300px; overflow-y: auto;">
+                                    <!-- Messages will load here -->
                                 </div>
-                                <div class="card-body">
-                                    <div class="compliance-status">
-                                        <div class="alert alert-success">
-                                            <i class="bi bi-check-circle"></i> HIPAA Compliant
+                                <div class="chat-input-area">
+                                    <div class="input-group">
+                                        <textarea class="form-control" id="messageInput" rows="1" placeholder="Type your message..."></textarea>
+                                        <button class="btn btn-primary" id="sendMessage">
+                                            <i class="bi bi-send"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <h5>Widget Area</h5>
+                            </div>
+                            <div class="card-body" id="widgetContainer">
+                                <!-- Video Widget -->
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h6 class="mb-0">Featured Video</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="ratio ratio-16x9">
+                                            <video id="mainVideo" class="w-100" controls preload="metadata" playsinline autoplay muted
+                                                onloadedmetadata="this.muted=true">
+                                                <source src="https://v.idomoo.ai/12032/f0f12389-1bb4-4a39-9782-75065548aca6/vh6jam71a922c2bp1f1wnkhq2u1d291v1p2h3f111s.mp4" type="video/mp4">
+                                                <p class="text-danger">Your browser does not support HTML5 video.</p>
+                                            </video>
                                         </div>
                                     </div>
-                                    <div class="compliance-chart">
-                                        <canvas id="complianceChart"></canvas>
-                                    </div>
                                 </div>
+                                <!-- Dynamic Widgets Load Here -->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Projects Tab -->
-            <div class="tab-pane fade show active" id="projects" role="tabpanel">
-                <!-- Widget Grid Container -->
-                <div class="grid-stack"></div>
-            </div>
-
-            <!-- Collaboration Hub Tab -->
-            <div class="tab-pane fade" id="collaboration" role="tabpanel">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Active Collaborators</h5>
-                                <div id="collaboratorsList" class="mb-4">
-                                    <!-- Collaborators will be loaded here -->
-                                </div>
-                                <div id="sharedWorkspace">
-                                    <!-- Shared workspace content -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Team Chat</h5>
-                                <div id="teamChat">
-                                    <!-- Team chat interface -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Voice Chat Tab -->
-            <div class="tab-pane fade" id="voice-chat" role="tabpanel">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Voice Communication</h5>
-                        <div id="voiceChatInterface">
-                            <!-- Voice chat interface will be loaded here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Experience Tab -->
-            <div class="tab-pane fade" id="mobile" role="tabpanel">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Mobile Gesture Guide</h5>
-                        <div id="gestureGuide">
-                            <!-- Mobile gesture guide and settings -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Desktop Tab -->
-            <div class="tab-pane fade" id="desktop" role="tabpanel">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Desktop Interface</h5>
-                        <div id="desktopInterface">
-                            <!-- Desktop specific features -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Developer Tab -->
-            <div class="tab-pane fade" id="developer" role="tabpanel">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Developer Tools</h5>
-                        <div id="developerTools">
-                            <!-- Developer tools and documentation -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </main>
         </div>
     </div>
 
     <!-- Add Widget Modal -->
-    <div class="modal fade" id="addWidgetModal" tabindex="-1">
+    <div class="modal fade" id="addWidgetModal" tabindex="-1" aria-labelledby="addWidgetModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add Widget</h5>
+                    <h5 class="modal-title" id="addWidgetModalLabel">Add Widget</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -550,153 +247,1341 @@
         </div>
     </div>
 
-    <!-- Chat Preview Modal -->
-    <div class="modal fade" id="previewModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Preview</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script>
+        // Toast notification function
+        function showNotification(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast position-fixed bottom-0 end-0 m-3';
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <div class="toast-header">
+                    <strong class="me-auto">Notification</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
                 </div>
-                <div class="modal-body">
-                    <div id="previewContent"></div>
+                <div class="toast-body">${message}</div>
+            `;
+            document.body.appendChild(toast);
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Perplexity Search Function
+        async function performPerplexitySearch(query) {
+            try {
+                const response = await fetch('https://api.perplexity.ai/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query })
+                });
+                const data = await response.json();
+                addMessage(`Search Results: ${data.results}`, false);
+            } catch (error) {
+                showNotification('Error performing search. Please try again.');
+            }
+        }
+
+        // Chat functionality
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendMessageBtn = document.getElementById('sendMessage');
+
+        function addMessage(message, isUser = true) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-message ${isUser ? 'user-message' : 'ai-message'} p-2 mb-2 rounded`;
+            msgDiv.style.backgroundColor = isUser ? '#007bff' : '#6c757d';
+            msgDiv.style.color = '#fff';
+            msgDiv.style.maxWidth = '80%';
+            msgDiv.style.marginLeft = isUser ? 'auto' : '0';
+            msgDiv.textContent = message;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendMessageBtn.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                messageInput.value = '';
+                // Check if it's a search query
+                if (message.toLowerCase().startsWith('/search ')) {
+                    const searchQuery = message.slice(8);
+                    performPerplexitySearch(searchQuery);
+                } else {
+                    // Simulate AI response
+                    setTimeout(() => {
+                        addMessage('Message received. This is a placeholder response.', false);
+                    }, 1000);
+                }
+            }
+        });
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessageBtn.click();
+            }
+        });
+
+        // Control panel buttons
+        document.getElementById('attachFileBtn').addEventListener('click', () => {
+            showNotification('File attachment feature coming soon');
+        });
+
+        document.getElementById('voiceBtn').addEventListener('click', () => {
+            showNotification('Voice input feature coming soon');
+        });
+
+        document.getElementById('imageCreateBtn').addEventListener('click', () => {
+            showNotification('Image creation feature coming soon');
+        });
+
+        document.getElementById('cameraBtn').addEventListener('click', () => {
+            showNotification('Camera feature coming soon');
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const query = prompt('Enter your search query:');
+            if (query) {
+                performPerplexitySearch(query);
+            }
+        });
+
+        // Mode selection buttons
+        const modeButtons = ['researchMode', 'generalMode', 'proposalMode', 'webdevMode'];
+        modeButtons.forEach(buttonId => {
+            document.getElementById(buttonId).addEventListener('click', (e) => {
+                document.querySelectorAll('.btn-outline-secondary').forEach(btn => btn.classList.remove('active'));
+                e.target.closest('.btn').classList.add('active');
+                showNotification(`Switched to ${buttonId.replace('Mode', '')} mode`);
+            });
+        });
+
+        // Widget Handling
+        document.getElementById('addWidgetBtn').addEventListener('click', () => {
+            const widgetType = document.getElementById('widgetTypeSelect').value;
+            const widgetContainer = document.getElementById('widgetContainer');
+            const newWidget = document.createElement('div');
+            newWidget.className = 'widget card mb-3';
+            newWidget.innerHTML = `
+                <div class="card-header">
+                    <h6 class="mb-0">${widgetType.replace('_', ' ').toUpperCase()}</h6>
+                </div>
+                <div class="card-body">
+                    <p>New Widget: ${widgetType}</p>
+                </div>
+            `;
+            widgetContainer.appendChild(newWidget);
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addWidgetModal'));
+            modal.hide();
+            showNotification('Widget added successfully');
+        });
+
+        // Video player error handling
+        const video = document.getElementById('mainVideo');
+        video.addEventListener('error', () => {
+            showNotification('Error loading video. Please try again later.');
+        });
+    </script>
+</body>
+
+</html>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Model Chat Interface</title>
+    <meta name="description" content="Agile Defense Systems - advanced defense and contract intelligence platform">
+    <meta name="keywords" content="defense contractor, cybersecurity, IT solutions, government contracting, military technology">
+
+    <!-- CSS Dependencies -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css" rel="stylesheet">
+
+    <!-- Font Awesome (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- jsPDF (for PDF generation) -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <!-- docx library (for .docx generation) -->
+    <script src="https://cdn.jsdelivr.net/npm/docx@8.3.2/build/index.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* ------------------------------------
+           Global Base Styles
+        ------------------------------------ */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2A2A2A;
+            color: #EDEDED;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ------------------------------------
+           Header Navigation (Marketing Site)
+        ------------------------------------ */
+        .marketing-header {
+            background-color: #001f3f;
+            color: #FFF;
+            position: relative;
+            z-index: 999;
+        }
+        .marketing-header .nav-link,
+        .marketing-header a.navbar-brand {
+            color: #FFF;
+            transition: color 0.3s;
+        }
+        .marketing-header .nav-link:hover {
+            color: #FFD700;
+        }
+
+        /* ------------------------------------
+           Hero Section
+        ------------------------------------ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.35);
+        }
+        .hero-content {
+            text-align: center;
+            color: #EDEDED;
+            max-width: 700px;
+            padding: 0 15px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .hero-content .btn {
+            margin: 5px;
+        }
+
+        /* ------------------------------------
+           Services Section
+        ------------------------------------ */
+        .services-section {
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 60px 0;
+        }
+        .services-section h2 {
+            color: #001f3f;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .service-card {
+            background: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        .service-card__icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #0074D9;
+        }
+        .service-card__link {
+            text-decoration: none;
+            color: #0074D9;
+            font-weight: bold;
+        }
+
+        /* ------------------------------------
+           Testimonials Section
+        ------------------------------------ */
+        .testimonials-section {
+            padding: 60px 0;
+        }
+        .testimonials-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .testimonial-card {
+            background: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 0 10px;
+        }
+        .testimonial-card__content i {
+            color: #0074D9;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+
+        /* ------------------------------------
+           CTA Section (Parallax style)
+        ------------------------------------ */
+        .cta-section {
+            position: relative;
+            background: url('https://via.placeholder.com/1500x800/001f3f/ffffff?text=Defense+Background') center/cover no-repeat;
+            padding: 60px 0;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .cta-content {
+            position: relative;
+            text-align: center;
+            color: #FFF;
+        }
+        .cta-content h2 {
+            margin-bottom: 1rem;
+        }
+        .cta-content p {
+            margin-bottom: 2rem;
+        }
+
+        /* ------------------------------------
+           Marketing Footer
+        ------------------------------------ */
+        .marketing-footer {
+            background-color: #001f3f;
+            color: #FFF;
+            padding: 40px 0;
+        }
+        .marketing-footer a {
+            color: #FFF;
+        }
+        .footer__brand img {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        .footer__links li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+        .footer__contact i {
+            margin-right: 8px;
+        }
+        .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 10px;
+        }
+
+        /* ------------------------------------
+           Dashboard Layout (AIDEN)
+        ------------------------------------ */
+        .dashboard-container {
+            background-color: #2A2A2A;
+            color: #EDEDED;
+        }
+        .sidebar {
+            background-color: #1F1F1F;
+            min-height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+        .sidebar h4 {
+            color: #FFF;
+        }
+        .sidebar .nav-link {
+            color: #B0B0B0;
+            transition: color 0.3s;
+        }
+        .sidebar .nav-link:hover {
+            color: #FFFFFF;
+        }
+        .sidebar .nav-link.active {
+            color: #3DB8E7;
+            font-weight: bold;
+        }
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .profile-dropdown {
+            position: relative;
+        }
+        .profile-dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: #1F1F1F;
+            border: 1px solid #444;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        .profile-dropdown-menu a {
+            color: #EDEDED;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .profile-dropdown-menu a:hover {
+            background: #333333;
+        }
+        .profile-dropdown:hover .profile-dropdown-menu {
+            display: block;
+        }
+
+        /* Charts Section */
+        .card {
+            background-color: #333333;
+            color: #EDEDED;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .card-header {
+            border-bottom: 1px solid #444;
+        }
+        .card-body {
+            background-color: #2A2A2A;
+        }
+
+        /* Multi-Model AI Chat */
+        /* Chat Messages with Markdown Support */
+        .chat-messages {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            height: 400px;
+            overflow-y: auto;
+            background-color: #333333;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .chat-messages .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+        .chat-messages .message.user {
+            border-radius: 15px 15px 0 15px;
+        .chat-messages .message.user {
+            background-color: #3DB8E7;
+            color: #fff;
+            text-align: right;
+        }
+        .chat-messages .message.ai {
+            background-color: #444444;
+            color: #EDEDED;
+        }
+
+        /* Contract Intelligence Form */
+        #contractIntelligenceForm label {
+            font-weight: 600;
+        }
+        #contractIntelligenceForm input,
+        #contractIntelligenceForm textarea {
+            margin-bottom: 10px;
+        }
+
+        /* Email Templates Subsection */
+        #emailTemplates textarea {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <div class="container mt-4">
+        <!-- Chat Interface -->
+        <div class="chat-container">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>AI Chat Interface</h3>
+                    <select class="form-select w-auto" id="modelSelect">
+                        <option value="aiden">AIDEN</option>
+                        <option value="llama">LLaMA</option>
+                        <option value="mistral">Mistral</option>
+                        <option value="gemma">Gemma</option>
+                    </select>
+                </div>
+                <div class="card-body">
+                    <div class="chat-messages mb-3" id="chatMessages">
+                        <!-- Messages will appear here -->
+                    </div>
+                    <form id="chatForm" class="chat-input-form">
+                        <div class="input-group">
+                            <textarea 
+                                class="form-control" 
+                                id="messageInput"
+                                placeholder="Type your message..."
+                                rows="2"
+                            ></textarea>
+                            <button 
+                                type="submit" 
+                                class="btn btn-primary"
+                            >
+                                <i class="bi bi-send"></i> Send
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Core Dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/xterm@4.13.0/lib/xterm.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/static/js/dashboard.js"></script>
-    <script src="/static/js/projects.js"></script>
-    <script src="/static/js/widget-system.js"></script>
-    <script src="/static/js/command-wizard.js"></script>
-    <script src="/static/js/voice-commands.js"></script>
-    <script src="/static/js/chat-interface.js"></script>
-    <script src="/static/js/aiden-integration.js"></script>
-    <script src="/static/js/multi-model-chat.js"></script>
-<!-- Advanced Footer with Interactive Elements -->
-<footer class="footer" role="contentinfo">
-    <div class="footer__world-map">
-        <div id="globalPresence"></div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/js/chat.js"></script>
+<nav class="navbar navbar-expand-lg marketing-header">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="#home">Agile Defense Systems</a>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#marketingNav" aria-controls="marketingNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list" style="font-size:1.5rem;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="marketingNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicesSection">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonialsSection">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
+            </ul>
+        </div>
     </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <video autoplay muted loop playsinline class="hero__video">
+        <!-- Replace source with your actual hero-bg.mp4 or video file -->
+        <source src="https://cdn.videvo.net/videvo_files/video/premium/video0026/large_watermarked/real_smoke_flares_blueBG03_preview.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
+    <div class="container hero-content">
+        <h1>Innovative Defense Solutions<br><span class="text-info">Empowering the Future</span></h1>
+        <p>Delivering cutting-edge technology and strategic solutions for tomorrow's defense challenges</p>
+        <a href="#servicesSection" class="btn btn-primary">Learn More</a>
+        <a href="#footer" class="btn btn-secondary">Request a Proposal</a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section" id="servicesSection">
     <div class="container">
-        <div class="footer__grid">
-            <div class="footer__info">
-                <img src="/images/logo-quantum.svg" alt="Agile Defense Systems Logo" class="footer__logo">
-                <p>Pioneering the future of defense technology with quantum computing and AI-driven solutions.</p>
-                <div class="certifications">
-                    <img src="/images/iso-27001.svg" alt="ISO 27001" class="certification-badge">
-                    <img src="/images/cmmc-l3.svg" alt="CMMC Level 3" class="certification-badge">
-                    <img src="/images/nist-800-171.svg" alt="NIST 800-171" class="certification-badge">
+        <h2 class="mb-5">Core Capabilities</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Defense Contracting</h3>
+                    <p>Strategic procurement and contract management for defense initiatives.</p>
+                    <a href="#dashboard" class="service-card__link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="footer__solutions">
-                <h4>Solutions</h4>
-                <ul>
-                    <li><a href="/quantum-defense">Quantum Defense</a></li>
-                    <li><a href="/ai-systems">AI Systems</a></li>
-                    <li><a href="/cyber-security">Cyber Security</a></li>
-                    <li><a href="/hypersonic">Hypersonic Technology</a></li>
-                </ul>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fas fa-lock"></i></div>
+                    <h3>Cybersecurity</h3>
+                    <p>Advanced threat protection and security infrastructure solutions.</p>
+                    <a href="#dashboard" class="service-card__link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="footer__company">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/leadership">Leadership</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/press">Press Room</a></li>
-                </ul>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>IT Solutions</h3>
+                    <p>Custom technology solutions and systems integration services.</p>
+                    <a href="#dashboard" class="service-card__link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="footer__contact">
-                <h4>Contact</h4>
-                <address>
-                    <div class="contact-item">
-                        <i class="bi bi-geo-alt"></i>
-                        <span>100 Defense Plaza<br>Arlington, VA 22201</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="bi bi-telephone"></i>
-                        <a href="tel:+1-703-555-0123">703-555-0123</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="bi bi-envelope"></i>
-                        <a href="mailto:info@agiledefense.com">info@agiledefense.com</a>
-                    </div>
-                </address>
-            </div>
-            <div class="footer__newsletter">
-                <h4>Stay Informed</h4>
-                <p>Subscribe to our defense technology insights newsletter</p>
-                <form class="newsletter-form" action="/subscribe" method="POST">
-                    <div class="input-group">
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-quantum">Subscribe</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="footer__social">
-                <a href="https://linkedin.com/company/agile-defense" aria-label="LinkedIn" class="social-link">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://twitter.com/agiledefense" aria-label="Twitter" class="social-link">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="https://github.com/agiledefense" aria-label="GitHub" class="social-link">
-                    <i class="bi bi-github"></i>
-                </a>
-            </div>
-            <div class="footer__legal">
-                <p>&copy; 2024 Agile Defense Systems. All rights reserved.</p>
-                <nav class="legal-nav">
-                    <a href="/privacy">Privacy</a>
-                    <a href="/terms">Terms</a>
-                    <a href="/security">Security</a>
-                    <a href="/compliance">Compliance</a>
-                </nav>
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Project Management</h3>
+                    <p>Expert oversight and execution of complex defense projects.</p>
+                    <a href="#dashboard" class="service-card__link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </div>
-    
-    <!-- Cookie Consent -->
-    <div class="cookie-consent" id="cookieConsent">
-        <div class="cookie-content">
-            <p>We use cookies to enhance your experience and analyze site performance.</p>
-            <div class="cookie-buttons">
-                <button class="btn btn-quantum-sm" id="acceptCookies">Accept All</button>
-                <button class="btn btn-outline-quantum-sm" id="customizeCookies">Customize</button>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" id="testimonialsSection">
+    <div class="container">
+        <h2>Client Success Stories</h2>
+        <div class="row mt-5">
+            <!-- Testimonial 1 -->
+            <div class="col-md-6">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Agile Defense Systems has been instrumental in modernizing our security infrastructure and ensuring our systems meet the highest standards.</p>
+                        <div class="testimonial-card__author mt-3">
+                            <h4 class="mb-0">Department of Defense</h4>
+                            <p class="text-muted">Cybersecurity Initiative</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- Testimonial 2 -->
+            <div class="col-md-6">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Their expertise in defense technology and commitment to excellence has made them a valuable partner in our mission-critical projects.</p>
+                        <div class="testimonial-card__author mt-3">
+                            <h4 class="mb-0">U.S. Military Branch</h4>
+                            <p class="text-muted">Technology Integration Project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section text-light text-center">
+    <div class="container cta-content">
+        <h2>Ready to Enhance Your Defense Capabilities?</h2>
+        <p>Let's discuss how our innovative solutions can support your mission.</p>
+        <a href="#footer" class="btn btn-primary">Schedule a Consultation</a>
+        <a href="#testimonialsSection" class="btn btn-secondary">View Our Work</a>
+    </div>
+</section>
+
+
+<!-- ========================================
+     2) AIDEN DASHBOARD SECTION
+     ======================================== -->
+
+<div class="container-fluid dashboard-container" id="dashboard">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 sidebar d-none d-md-block">
+            <div class="p-3">
+                <h4>Agile Defense Systems</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard">
+                            <i class="bi bi-house-door"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            <i class="bi bi-kanban"></i> Defense Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#chat">
+                            <i class="bi bi-chat"></i> Multi-Model AI Chat
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contractIntelligence">
+                            <i class="bi bi-card-text"></i> Contract Intelligence
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#settings">
+                            <i class="bi bi-gear"></i> Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Dashboard Content -->
+        <main class="col-md-10 ms-sm-auto px-md-4 py-4">
+            <!-- Header Profile -->
+            <header class="d-flex justify-content-between align-items-center mb-4">
+                <div class="header-profile">
+                    <!-- Replace with your own avatar image -->
+                    <img src="https://via.placeholder.com/48" alt="Profile Picture" class="rounded-circle" width="48" height="48">
+                    <div>
+                        <h1 class="h3 mb-0">AIDEN Dashboard</h1>
+                        <p class="text-muted mb-0">Agile Defense Systems</p>
+                    </div>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-person"></i> Profile
+                    </button>
+                    <div class="profile-dropdown-menu">
+                        <a href="#settings">Settings</a>
+                        <a href="#">Help Center</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Overview -->
+            <section id="dashboard-overview">
+                <h2>Welcome to Agile Defense Systems</h2>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="bi bi-person"></i> Research Projects</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="projectStatsChart" style="height:300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="bi bi-clipboard-pulse"></i> Pilot Project Progress</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="pilotProgressChart" style="height:300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Multi-Model AI Chat -->
+            <section id="chat" class="mt-5">
+                <h2>Multi-Model AI Chat</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="bi bi-chat"></i> Collaborate with Multi-Model AIDEN</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chat-messages" id="chatMessages">
+                            <!-- Messages will be displayed here -->
+                        </div>
+                        <div class="input-group mt-3">
+                            <select class="form-select flex-grow-0" id="modelSelect" style="width: auto">
+                                <option value="aiden">AIDEN</option>
+                                <option value="llama">LLaMA</option>
+                                <option value="mistral">Mistral</option>
+                            </select>
+                            <textarea class="form-control" id="chatInput" placeholder="Type your message..." rows="1"></textarea>
+                            <button class="btn btn-primary" type="button" id="sendMessage">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contract Intelligence Section -->
+            <section id="contractIntelligence" class="mt-5">
+                <h2>Contract Intelligence</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="bi bi-card-text"></i> Generate Real-Time Contract Reports</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Sample Contract Form -->
+                        <form id="contractIntelligenceForm" class="mb-3">
+                            <div class="mb-3">
+                                <label for="contractTitle" class="form-label">Contract Title</label>
+                                <input type="text" class="form-control" id="contractTitle" placeholder="e.g. Cyber Defense Initiative">
+                            </div>
+                            <div class="mb-3">
+                                <label for="agencyName" class="form-label">Agency / Client</label>
+                                <input type="text" class="form-control" id="agencyName" placeholder="e.g. Department of Defense">
+                            </div>
+                            <div class="mb-3">
+                                <label for="riskProfile" class="form-label">Risk Profile</label>
+                                <input type="text" class="form-control" id="riskProfile" placeholder="e.g. Low, Medium, High">
+                            </div>
+                            <div class="mb-3">
+                                <label for="remarks" class="form-label">Additional Remarks</label>
+                                <textarea id="remarks" class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
+
+                        <!-- Generate PDF / DOCX / CSV Buttons -->
+                        <button class="btn btn-success mb-2" id="generateReportBtn">
+                            <i class="bi bi-file-earmark-pdf"></i> Generate PDF
+                        </button>
+                        <button class="btn btn-warning mb-2" id="generateDocxBtn">
+                            <i class="bi bi-file-earmark-word"></i> Generate DOCX
+                        </button>
+                        <button class="btn btn-info mb-2" id="generateCsvBtn">
+                            <i class="bi bi-file-earmark-spreadsheet"></i> Generate CSV
+                        </button>
+                        <small class="d-block mt-2 text-muted">
+                            <strong>Hotkeys:</strong>
+                            <ul class="mb-0">
+                                <li><kbd>Shift + R</kbd> to generate PDF</li>
+                                <li><kbd>Shift + D</kbd> to generate DOCX</li>
+                                <li><kbd>Shift + S</kbd> to generate CSV</li>
+                                <li><kbd>Shift + C</kbd> to run compliance check (placeholder)</li>
+                                <li><kbd>Shift + A</kbd> to run advanced analytics (placeholder)</li>
+                            </ul>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Email Templates Subsection -->
+                <div class="card mt-4" id="emailTemplates">
+                    <div class="card-header">
+                        <h5><i class="bi bi-envelope"></i> Email Templates</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-1 text-warning"><strong>Example Use:</strong> Auto-generate an email draft based on contract details.</p>
+                        <textarea class="form-control" rows="5" id="emailDraft" placeholder="Your email template or auto-generated draft will appear here..."></textarea>
+                        <button class="btn btn-primary mt-3" id="generateEmailBtn">
+                            <i class="bi bi-envelope-paper"></i> Generate Email
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional sections (#projects, #settings, etc.) as needed -->
+        </main>
+    </div>
+</div>
+
+
+<!-- ========================================
+     3) MARKETING FOOTER
+     ======================================== -->
+<footer class="marketing-footer" id="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Footer Brand/Intro -->
+            <div class="col-md-4 mb-4">
+                <div class="footer__brand">
+                    <!-- Replace with your own logo -->
+                    <img src="https://via.placeholder.com/120x40/FFF/001f3f?text=Logo" alt="Agile Defense Systems" class="footer__logo">
+                    <p class="mt-2">Innovative Defense Solutions, Empowering the Future</p>
+                </div>
+                <div class="footer__social mt-3">
+                    <a href="#" class="me-3 text-light"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="me-3 text-light"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3 text-light"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="footer__links list-unstyled">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicesSection">Services</a></li>
+                    <li><a href="#testimonialsSection">Case Studies</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <ul class="footer__contact list-unstyled">
+                    <li><i class="fas fa-map-marker-alt"></i> 2602 Bellknap Beach Rd, Prospect, KY 40059</li>
+                    <li><i class="fas fa-phone"></i> (859) 397-0227</li>
+                    <li><i class="fas fa-envelope"></i> contact@agiledefense.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom mt-4">
+            <p class="mb-0">© 2025 Agile Defense Systems, LLC. All rights reserved.</p>
         </div>
     </div>
 </footer>
 
-<!-- Live Chat Widget -->
-<div class="live-chat-widget" id="liveChat">
-    <button class="chat-toggle" aria-label="Toggle live chat">
-        <i class="bi bi-chat-dots"></i>
-    </button>
-</div>
 
-<!-- Back to Top Button -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="bi bi-arrow-up"></i>
-</button>
+<!-- ========================================
+    4) SCRIPTS: Libraries and Dependencies
+    ======================================== -->
+<!-- Core Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Additional Scripts -->
-<script src="https://unpkg.com/@google/model-viewer" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flickity@2.3.0/dist/flickity.pkgd.min.js"></script>
-<script src="/js/quantum-effects.js"></script>
-<script src="/js/global-presence.js"></script>
+<!-- Markdown & Code Highlighting -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<!-- Terminal Emulator -->
+<script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+
+<!-- Chat Implementation -->
+<script src="/js/chat.js"></script>
+
+<script>
+    // WebSocket Configuration
+    let ws;
+    const WS_URL = 'ws://localhost:8080';
+    let reconnectAttempts = 0;
+    const MAX_RECONNECT_ATTEMPTS = 5;
+
+    function connectWebSocket() {
+        ws = new WebSocket(WS_URL);
+
+        ws.onopen = () => {
+            console.log('WebSocket connected');
+            reconnectAttempts = 0;
+            showNotification('Connected to server');
+        };
+
+        ws.onclose = () => {
+            console.log('WebSocket disconnected');
+            if (reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
+                setTimeout(() => {
+                    reconnectAttempts++;
+                    connectWebSocket();
+                }, 1000 * Math.pow(2, reconnectAttempts));
+            } else {
+                showNotification('Connection lost. Please refresh the page.');
+            }
+        };
+
+        ws.onerror = (error) => {
+            console.error('WebSocket error:', error);
+            showNotification('Connection error occurred');
+        };
+
+        ws.onmessage = (event) => {
+            try {
+                const data = JSON.parse(event.data);
+                handleWebSocketMessage(data);
+            } catch (error) {
+                console.error('Error parsing message:', error);
+            }
+        };
+    }
+
+    // Terminal Initialization
+    const term = new Terminal({
+        cursorBlink: true,
+        theme: {
+            background: '#1E1E1E'
+        }
+    });
+    term.open(document.getElementById('terminal'));
+
+    // Local Storage Management
+    const LOCAL_STORAGE_KEY = 'aidenDashboard';
+    const defaultSettings = {
+        theme: 'dark',
+        fontSize: 14,
+        chatHistory: [],
+        modelPreferences: {}
+    };
+
+    function loadSettings() {
+        try {
+            const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+            return stored ? JSON.parse(stored) : defaultSettings;
+        } catch (error) {
+            console.error('Error loading settings:', error);
+            return defaultSettings;
+        }
+    }
+
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(settings));
+        } catch (error) {
+            console.error('Error saving settings:', error);
+            showNotification('Error saving settings');
+        }
+    }
+
+    // Error Boundary Implementation
+    class ErrorBoundary {
+        static handleError(error, componentName) {
+            console.error(`Error in ${componentName}:`, error);
+            showNotification(`Error in ${componentName}. Please refresh the page.`);
+        }
+    }
+
+    // Enhanced Video Player
+    class VideoPlayer {
+        constructor(videoElement) {
+            this.video = videoElement;
+            this.fallbackSources = [
+                '/path/to/fallback1.mp4',
+                '/path/to/fallback2.mp4'
+            ];
+            this.currentSourceIndex = 0;
+            this.setupEventListeners();
+        }
+
+        setupEventListeners() {
+            this.video.addEventListener('error', () => this.handleVideoError());
+            this.video.addEventListener('loadedmetadata', () => {
+                console.log('Video loaded successfully');
+            });
+        }
+
+        handleVideoError() {
+            if (this.currentSourceIndex < this.fallbackSources.length) {
+                this.video.src = this.fallbackSources[this.currentSourceIndex++];
+                this.video.load();
+            } else {
+                showNotification('Unable to load video. Please try again later.');
+            }
+        }
+    }
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+        // CTRL/CMD + K: Focus search
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            document.getElementById('searchBtn').click();
+        }
+        // CTRL/CMD + /: Toggle chat focus
+        if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+            e.preventDefault();
+            document.getElementById('messageInput').focus();
+        }
+        // CTRL/CMD + B: Toggle sidebar
+        if ((e.ctrlKey || e.metaKey) && e.key === 'b') {
+            e.preventDefault();
+            document.querySelector('.sidebar').classList.toggle('d-none');
+        }
+    });
+
+    // Markdown Rendering
+    function renderMarkdown(text) {
+        return marked.parse(text, {
+            gfm: true,
+            breaks: true,
+            highlight: function(code, lang) {
+                if (Prism.languages[lang]) {
+                    return Prism.highlight(code, Prism.languages[lang], lang);
+                }
+                return code;
+            }
+        });
+    }
+
+    // Enhanced Message Handling
+    function addMessage(message, isUser = true) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `chat-message ${isUser ? 'user-message' : 'ai-message'} p-2 mb-2 rounded`;
+        msgDiv.style.backgroundColor = isUser ? '#007bff' : '#6c757d';
+        msgDiv.style.color = '#fff';
+        msgDiv.style.maxWidth = '80%';
+        msgDiv.style.marginLeft = isUser ? 'auto' : '0';
+        
+        // Render markdown for AI messages
+        if (!isUser) {
+            msgDiv.innerHTML = renderMarkdown(message);
+        } else {
+            msgDiv.textContent = message;
+        }
+        
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Save to local storage
+        const settings = loadSettings();
+        settings.chatHistory.push({
+            message,
+            isUser,
+            timestamp: new Date().toISOString()
+        });
+        saveSettings(settings);
+    }
+
+    // --------------------------------------
+    // Initialize Charts
+    // --------------------------------------
+    const projectCtx = document.getElementById('projectStatsChart').getContext('2d');
+    const pilotCtx = document.getElementById('pilotProgressChart').getContext('2d');
+
+    new Chart(projectCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar'],
+            datasets: [{
+                label: 'Projects',
+                data: [10, 25, 15],
+                borderColor: 'blue',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    new Chart(pilotCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Phase 1', 'Phase 2', 'Phase 3'],
+            datasets: [{
+                label: 'Progress',
+                data: [50, 70, 30],
+                backgroundColor: 'green'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // --------------------------------------
+    // Chat System
+    // --------------------------------------
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const sendChatBtn = document.getElementById('sendChatBtn');
+    const modelSelect = document.getElementById('modelSelect');
+
+    sendChatBtn.addEventListener('click', () => {
+        const message = chatInput.value;
+        const model = modelSelect.value;
+
+        if (message.trim()) {
+            addMessage('user', message);
+
+            // Simulate AI Response
+            setTimeout(() => {
+                addMessage('ai', `${model} Response: This is a simulated response.`);
+            }, 1000);
+
+            chatInput.value = '';
+        }
+    });
+
+    function addMessage(type, content) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = content;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // --------------------------------------
+    // Contract Intelligence: Gather Form Data
+    // --------------------------------------
+    function getFormData() {
+        return {
+            titleVal: document.getElementById('contractTitle').value || 'N/A',
+            agencyVal: document.getElementById('agencyName').value || 'N/A',
+            riskVal: document.getElementById('riskProfile').value || 'N/A',
+            remarksVal: document.getElementById('remarks').value || 'N/A'
+        }
+    }
+
+    // --------------------------------------
+    // 1) Generate PDF
+    // --------------------------------------
+    const { jsPDF } = window.jspdf; // Destructure from jspdf.umd.min.js
+    const generateReportBtn = document.getElementById('generateReportBtn');
+
+    function generatePDFReport() {
+        const { titleVal, agencyVal, riskVal, remarksVal } = getFormData();
+
+        // Create new jsPDF instance (portrait, mm, A4)
+        const doc = new jsPDF('p', 'mm', 'a4');
+
+        // Title
+        doc.setFontSize(18);
+        doc.text('Contract Intelligence Report', 10, 15);
+
+        // Contract Details
+        doc.setFontSize(12);
+        doc.text(`Title: ${titleVal}`, 10, 30);
+        doc.text(`Agency/Client: ${agencyVal}`, 10, 40);
+        doc.text(`Risk Profile: ${riskVal}`, 10, 50);
+
+        // Remarks
+        doc.text('Remarks:', 10, 60);
+        doc.setFontSize(11);
+        doc.text(remarksVal, 10, 70, { maxWidth: 190 });
+
+        // Footer
+        doc.setFontSize(10);
+        doc.text('© 2025 Agile Defense Systems, LLC', 10, 285);
+
+        // Save the PDF (auto-download)
+        doc.save('Contract_Intelligence_Report.pdf');
+    }
+
+    generateReportBtn.addEventListener('click', generatePDFReport);
+
+    // --------------------------------------
+    // 2) Generate DOCX
+    // --------------------------------------
+    const generateDocxBtn = document.getElementById('generateDocxBtn');
+    const {
+      Document,
+      Packer,
+      Paragraph,
+      TextRun
+    } = window.docx; // from docx library
+
+    async function generateDocxReport() {
+        const { titleVal, agencyVal, riskVal, remarksVal } = getFormData();
+
+        // Construct the doc
+        const doc = new Document({
+            sections: [
+                {
+                    children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: "Contract Intelligence Report",
+                                    bold: true,
+                                    size: 32
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            text: `Title: ${titleVal}`
+                        }),
+                        new Paragraph({
+                            text: `Agency/Client: ${agencyVal}`
+                        }),
+                        new Paragraph({
+                            text: `Risk Profile: ${riskVal}`
+                        }),
+                        new Paragraph({
+                            text: 'Remarks:'
+                        }),
+                        new Paragraph({
+                            text: remarksVal
+                        }),
+                        new Paragraph({
+                            text: "© 2025 Agile Defense Systems, LLC",
+                            style: "subtleEmphasis"
+                        })
+                    ]
+                }
+            ]
+        });
+
+        // Convert to blob and trigger download
+        const blob = await Packer.toBlob(doc);
+        const blobUrl = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.href = blobUrl;
+        link.download = "Contract_Intelligence_Report.docx";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    generateDocxBtn.addEventListener('click', generateDocxReport);
+
+    // --------------------------------------
+    // 3) Generate CSV
+    // --------------------------------------
+    const generateCsvBtn = document.getElementById('generateCsvBtn');
+    function generateCsvReport() {
+        const { titleVal, agencyVal, riskVal, remarksVal } = getFormData();
+
+        // Simple CSV approach:
+        // Each row: ["Title","Agency","RiskProfile","Remarks"]
+        // In real usage, you'd typically add more columns or quotes if needed.
+        const headers = "Title,Agency,Profile,Remarks\n";
+        const row = `"${titleVal}","${agencyVal}","${riskVal}","${remarksVal}"\n`;
+
+        const csvContent = headers + row;
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const blobUrl = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.href = blobUrl;
+        link.download = "Contract_Intelligence_Report.csv";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    generateCsvBtn.addEventListener('click', generateCsvReport);
+
+    // --------------------------------------
+    // 4) Email Templates: Generate Email Draft
+    // --------------------------------------
+    const generateEmailBtn = document.getElementById('generateEmailBtn');
+    const emailDraft = document.getElementById('emailDraft');
+
+    function generateEmailTemplate() {
+        const { titleVal, agencyVal, riskVal, remarksVal } = getFormData();
+
+        // Simple example of auto-filling an email draft
+        let draft = `Subject: Contract Update - ${titleVal}\n\n`;
+        draft += `Hello ${agencyVal} Team,\n\n`;
+        draft += `We have reviewed the contract titled "${titleVal}". `;
+        draft += `The current risk profile is: ${riskVal}.\n\n`;
+        draft += `Remarks: ${remarksVal}\n\n`;
+        draft += `Please let us know if you require any further details.\n\n`;
+        draft += `Best Regards,\nAgile Defense Systems, LLC`;
+
+        emailDraft.value = draft;
+    }
+
+    generateEmailBtn.addEventListener('click', generateEmailTemplate);
+
+    // --------------------------------------
+    // Additional Hotkeys
+    // --------------------------------------
+    document.addEventListener('keydown', (e) => {
+        // SHIFT + R -> PDF
+        if (e.shiftKey && e.key === 'R') {
+            generatePDFReport();
+        }
+        // SHIFT + D -> DOCX
+        if (e.shiftKey && e.key === 'D') {
+            generateDocxReport();
+        }
+        // SHIFT + S -> CSV
+        if (e.shiftKey && e.key === 'S') {
+            generateCsvReport();
+        }
+        // SHIFT + C -> Compliance Check (placeholder)
+        if (e.shiftKey && e.key === 'C') {
+            alert("Compliance check triggered. (Insert your AI or API logic here.)");
+        }
+        // SHIFT + A -> Advanced Analytics (placeholder)
+        if (e.shiftKey && e.key === 'A') {
+            alert("Advanced analytics triggered. (Insert your AI or API logic here.)");
+        }
+    });
+</script>
+
 </body>
 </html>
+
+

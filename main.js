@@ -1,46 +1,26 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
-const path = require('path')
-const isDev = process.env.NODE_ENV !== 'production'
-
-function createWindow() {
-// Create the browser window
-const mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    webPreferences: {
-    nodeIntegration: true,
-    contextIsolation: false,
-    enableRemoteModule: true
+document.addEventListener('keydown', function (e) {
+    if (e.key === '1') {
+        // Trigger auto-advance logic
+        fetch('/auto-advance')
+            .then(response => response.json())
+            .then(data => displayResponse(data));
+    } else if (e.key === '2') {
+        // Trigger auto-enhance logic
+        fetch('/auto-enhance')
+            .then(response => response.json())
+            .then(data => displayResponse(data));
+    } else if (e.key === '3') {
+        // Trigger recursive options logic
+        fetch('/recursive-options')
+            .then(response => response.json())
+            .then(data => displayResponse(data));
     }
-})
+});
 
-// Load the index.html file
-mainWindow.loadFile('src/index.html')
-
-// Open DevTools in development mode
-if (isDev) {
-    mainWindow.webContents.openDevTools()
+function displayResponse(data) {
+    // Function to display the AI response in the UI
+    const chatWindow = document.getElementById("chatWindow");
+    const message = document.createElement("p");
+    message.textContent = data.response;
+    chatWindow.appendChild(message);
 }
-}
-
-// Handle app lifecycle events
-app.whenReady().then(createWindow)
-
-app.on('window-all-closed', () => {
-if (process.platform !== 'darwin') {
-    app.quit()
-}
-})
-
-app.on('activate', () => {
-if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow()
-}
-})
-
-// IPC Handlers
-ipcMain.on('data-request', (event, arg) => {
-// Handle data requests from renderer
-event.reply('data-response', {status: 'success'})
-})
-
